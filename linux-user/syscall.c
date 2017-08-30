@@ -7720,7 +7720,7 @@ static abi_long qemu_execve(char *filename, char *argv[],
                 ret2 = read(fd2, buf2, BINPRM_BUF_SIZE);
                 close(fd2);
                 if (!((ret2 == -1) || (ret2 < 2))) {
-                    if (memcmp(buf, buf2, 16) == 0) {
+                    if (memcmp(buf, buf2, 20) == 0) {
                         return get_errno(execve(filename, argv, envp));
                     }
                 }
