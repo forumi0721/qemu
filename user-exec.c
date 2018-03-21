@@ -222,7 +222,7 @@ int cpu_signal_handler(int host_signum, void *pinfo,
 #elif defined(__OpenBSD__)
     struct sigcontext *uc = puc;
 #else
-    struct ucontext *uc = puc;
+    ucontext_t *uc = puc;
 #endif
 
     pc = PC_sig(uc);
